@@ -8,6 +8,7 @@ packages=[
 ]
 [tool.poetry.dependencies]
 python = "^3.6.15"
+requests = "^2.27.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
@@ -23,8 +24,8 @@ Sphinx = "^4.0"
 furo = "^2022.3.4"
 myst-parser = "^0.16"
 mypy = "^0.941"
-safety = "^1.10.3"
 types-toml = "^0.10.4"
+safety = "^1.10.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
