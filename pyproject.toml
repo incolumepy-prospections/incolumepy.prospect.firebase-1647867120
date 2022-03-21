@@ -7,7 +7,7 @@ packages=[
     {include = 'incolumepy/prospect', from=''},
 ]
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.6.15"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
