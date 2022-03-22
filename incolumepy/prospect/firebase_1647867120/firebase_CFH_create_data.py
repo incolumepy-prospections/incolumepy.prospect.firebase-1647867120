@@ -20,28 +20,33 @@ db = firestore.client()
 
 def add_record():
     """Add collection and document."""
-    data = {'name': 'Ricardo', 'age': 44}
+    data = {'name': 'Ricardo', 'age': 44, 'address': 'Brasil',
+            'socials': ['linkedin', 'facebook', 'telegram', 'instagram', 'twiter', 'github', 'gitlab']
+            }
     db.collection('my-collection').add(data)
     db.collection('my-collection/decretos/2022').add(data)
     db.collection('my-collection/decretos/2022').document('A0001').set(data)
+    db.collection('my-collection').document('D0001').set(data)
+    db.collection('my-collection').document('D0002').set({'name': 'Brito', 'age': 2, 'socials': ['github']})
+    db.collection('person').document('D0001').set(data)
 
 
 def add_data_auto_id0():
-    db.collection('person').add({'name': 'John Walking', 'age': 44, 'employed': True, 'address': None})
+    db.collection('person').add({'name': 'John Walking', 'age': 54, 'employed': True, 'address': None})
 
 
 def add_data_auto_id():
-    data = {'name': 'Jane Doe', 'age': 34, 'employed': False, 'address': 'New York'}
+    data = {'name': 'Jane Doe', 'age': 14, 'employed': False, 'address': 'USA'}
     db.collection('person').add(data)
 
 
 def add_data_auto_way2_id():
-    data = {'name': 'Jane Doe', 'age': 34, 'employed': False, 'address': 'New York'}
+    data = {'name': 'Jane Doe', 'age': 24, 'employed': False, 'address': 'Canada'}
     db.collection('people').document().set(data)
 
 
 def add_data_known_id():
-    data = {'name': 'Jane Doe', 'age': 34, 'employed': False, 'address': 'New York'}
+    data = {'name': 'Jane Doe', 'age': 34, 'employed': False, 'address': 'Turkey'}
     db.collection('people').document('janedoe').set(data)
 
 
@@ -70,10 +75,10 @@ def sub_collection_add():
 
 
 def run():
-    # add_record()
-    # add_data_auto_id()
-    # add_data_auto_way2_id()
-    # add_data_known_id()
+    add_record()
+    add_data_auto_id()
+    add_data_auto_way2_id()
+    add_data_known_id()
     add_atos_structure()
     update_data_by_id()
     sub_collection_add()
