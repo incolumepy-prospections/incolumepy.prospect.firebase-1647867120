@@ -10,6 +10,7 @@ packages=[
 python = "^3.6.15"
 requests = "^2.27.1"
 httpx = "^0.22.0"
+google-cloud = "^0.34.0"
 firebase-admin = "^5.2.0"
 
 [tool.poetry.dev-dependencies]
