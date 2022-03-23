@@ -28,6 +28,7 @@ myst-parser = "^0.16"
 mypy = "^0.941"
 types-toml = "^0.10.4"
 safety = "^1.10.3"
+types-requests = "^2.27.14"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
